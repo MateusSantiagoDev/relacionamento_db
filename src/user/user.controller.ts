@@ -6,7 +6,7 @@ import { UserEntity } from './entities/user.entity';
 import { UserService } from './user.service';
 
 @ApiTags('User')
-@Controller()
+@Controller('user')
 export class UserController {
   constructor(private readonly service: UserService) {}
 
