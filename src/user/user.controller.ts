@@ -14,9 +14,9 @@ export class UserController {
     summary: 'adicionar um novo usuário'
   })
   @Post()
-  create(@Body() dto: CreateUserDto): Promise<UserEntity> {
+  async create(@Body() dto: CreateUserDto): Promise<UserEntity> {
     try {
-        return this.service.create(dto)
+        return await this.service.create(dto)
     } catch (err) {}
   }
 
@@ -24,9 +24,9 @@ export class UserController {
     summary: 'Visualizar todos os usuários'
   })
   @Get()
-  findAll(): Promise<UserEntity[]>{
+  async findAll(): Promise<UserEntity[]>{
     try {
-      return this.service.findAll()
+      return await this.service.findAll()
     } catch (err) {}
   }
 
@@ -34,9 +34,9 @@ export class UserController {
     summary: 'Buscar um usuário pelo ID'
   })
   @Get(':id')
-  findOne(@Param('id') id: string): Promise<UserEntity> {
+  async findOne(@Param('id') id: string): Promise<UserEntity> {
     try {
-      return this.service.findOne(id)
+      return await this.service.findOne(id)
     } catch (err) {}
   }
 
@@ -44,9 +44,9 @@ export class UserController {
     summary: 'Editar um usuário pelo ID'
   })
   @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: UpdateUserDto): Promise<UserEntity> {
+  async update(@Param('id') id: string, @Body() dto: UpdateUserDto): Promise<UserEntity> {
     try {
-      return this.service.update(id, dto)
+      return await this.service.update(id, dto)
     } catch (err) {}
   }
 
@@ -54,9 +54,9 @@ export class UserController {
     summary: 'Remover um usuário pelo ID'
   })
   @Delete(':id')
-  delete(@Param('id') id: string): Promise<UserEntity> {
+  async delete(@Param('id') id: string): Promise<UserEntity> {
     try {
-      return this.service.delete(id)
+      return await this.service.delete(id)
     } catch (err) {}
   }
 
