@@ -1,1 +1,4 @@
-export class Table {}
+export class TableEntity {
+    id: string;
+    number: number
+}
