@@ -30,3 +30,15 @@ model Table {
 
   @@map("table")
 }
+
+model Order {
+  id String @id @unique
+
+  name        String
+  description String
+  price       Float
+  image       String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+}
